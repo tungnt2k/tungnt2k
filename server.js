@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 require('./routes')(app);
 
@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 
 app.use('/static', express.static('./public'));
 
-app.listen(port,(err)=>{
+app.listen(PORT,(err)=>{
     if(err) {
         console.error('Something error !!');
         console.error(err);
